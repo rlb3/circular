@@ -1,6 +1,6 @@
 # Circular
 
-**TODO: Add description**
+**Simple circular list implementation.**
 
 ## Installation
 
