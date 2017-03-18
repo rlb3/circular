@@ -12,7 +12,7 @@ defmodule Circular.Mixfile do
      escript: escript()]
   end
 
-  def escript, do: [main_module: DayList]
+  def escript, do: [main_module: DayList, name: "day_list"]
 
   # Configuration for the OTP application
   #

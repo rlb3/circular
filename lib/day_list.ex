@@ -6,8 +6,11 @@ defmodule DayList do
   end
 
   def main(args) when is_list(args) do
-    Enum.map(args, fn(x) -> String.to_atom(x) end) |>
-      run() |> inspect() |> IO.puts
+    Enum.map(args, fn(x) -> String.to_atom(x) end)
+    |> run()
+    |> Enum.map(fn(day) -> Atom.to_string(day) end)
+    |> Enum.join(", ")
+    |> IO.puts
   end
 
   def run([start, stop]) do
