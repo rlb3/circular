@@ -1,6 +1,19 @@
 defmodule DayList do
   @moduledoc false
 
+  def main([]) do
+    IO.puts("You must add arguments")
+  end
+
+  def main(args) when is_list(args) do
+    Enum.map(args, fn(x) -> String.to_atom(x) end) |>
+      run() |> inspect() |> IO.puts
+  end
+
+  def run([start, stop]) do
+    run(start, stop)
+  end
+
   def run(start, stop) do
     full_list() |>
       gen_day_list(start, stop, [])
